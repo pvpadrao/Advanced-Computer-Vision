@@ -5,3 +5,8 @@
 * ``hand_tracking_module.py``: stand-alone module for hand detection. 
 * ``hand_tracking_module_test.py``: example of the use of ``hand_tracking_module.py``
 * ``hand_landmarks.png``: mapping between hand and landmarks
+
+
+![demo_gif](https://user-images.githubusercontent.com/55985904/224433950-436aba5b-8570-4ef9-b424-4e2b75a37cc9.gif)
+
+### Project 2: TBD
