@@ -21,12 +21,26 @@ class poseDetector():
 
     def findPose(self, img, draw=True):
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        results = self.pose.process(img_rgb)
+        self.results = self.pose.process(img_rgb)
         # checking if any pose is detected
-        if results.pose_landmarks:
+        if self.results.pose_landmarks:
             if draw:
-                self.mpDraw.draw_landmarks(img, results.pose_landmarks, self.mpPose.POSE_CONNECTIONS)
+                self.mpDraw.draw_landmarks(img, self.results.pose_landmarks, self.mpPose.POSE_CONNECTIONS)
         return img
+    
+    def findPosition(self, img, draw=True):
+        landmark_list = []
+        # checking if any pose is detected
+        if self.results.pose_landmarks:
+        # getting the index and position of each landmark
+            for index, landmark in enumerate(self.results.pose_landmarks.landmark):
+                # converting x, y coordinates (given as aspect ratios of the image) to pixels
+                height, width, channel = img.shape
+                center_x, center_y = int(landmark.x * width), int(landmark.y * height)
+                landmark_list.append([index, center_x, center_y])
+                if draw:
+                    cv2.circle(img, (center_x, center_y), 12, (255, 255, 255), cv2.FILLED)
+        return landmark_list
 
 def main():
     cap = cv2.VideoCapture("PoseEstimationProject/videos/defante.mp4")
@@ -34,6 +48,8 @@ def main():
     while True:
         sucess, img = cap.read()
         detector.findPose(img)
+        #landmark_list = detector.findPosition(img)
+        #print(landmark_list[14])
         img = cv2.resize(img, (300, 620)) 
         cv2.imshow("Image", img)
         cv2.waitKey(1)
