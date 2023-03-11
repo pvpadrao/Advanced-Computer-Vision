@@ -14,3 +14,7 @@
 * ``pose_estimation_module.py``: stand-alone module for pose detection.
 * ``pose_estimation_module_test.py``: example of the use of ``pose_estimation_module.py``
 * ``body_landmarks.png``: mapping between body and landmarks
+### Project 3: Face Detection & Tracking
+* ``face_detection_minimal_requirements.py``: template to use ``mediapipe`` package for face detection
+* ``face_detection_module.py``: stand-alone module for face detection.
+* ``face_detection_module_test.py``: example of the use of ``face_detection_module.py``

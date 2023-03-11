@@ -1,8 +1,5 @@
 import cv2
 import mediapipe as mp
-import numpy as np
-
-
 class poseDetector():
     def __init__(self, mode=False, model_complexity = 1, smooth= True, upperBody = False, detection_confidence = 0.5, 
                  track_confidence = 0.5):
