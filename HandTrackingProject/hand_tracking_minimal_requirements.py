@@ -10,6 +10,7 @@ hands = mpHands.Hands()
 
 # drawing hand landmarks
 mpDraw = mp.solutions.drawing_utils
+drawing_specs = mpDraw.DrawingSpec(color=(0, 255, 0),thickness=2, circle_radius=2)
 
 # setting time
 previous_time = 0
@@ -31,7 +32,7 @@ while True:
                 center_x, center_y = int(landmark.x * width), int(landmark.y * height)
                 #print(index, center_x, center_y)
 
-            mpDraw.draw_landmarks(img, hand_landmarks, mpHands.HAND_CONNECTIONS)
+            mpDraw.draw_landmarks(img, hand_landmarks, mpHands.HAND_CONNECTIONS, drawing_specs)
 
     # calculting fps and printing to window
     current_time = time.time()
