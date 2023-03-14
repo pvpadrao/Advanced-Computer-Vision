@@ -24,7 +24,7 @@ while True:
             center_x, center_y = int(landmark.x * width), int(landmark.y * height)
             cv2.circle(img, (center_x, center_y), 8, (255, 0, 255), cv2.FILLED)
         mpDraw.draw_landmarks(img, results.pose_landmarks, mpPose.POSE_CONNECTIONS)
-
+    
     img = cv2.resize(img, (300, 620)) 
     cv2.imshow("Image", img)
     cv2.waitKey(1)
