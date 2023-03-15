@@ -38,7 +38,7 @@ while True:
                     height, width, channel = img.shape
                     # converting x, y of the relative bounding box to pixels
                     x, y = int(landmarks.x * width), int(landmarks.y * height)
-                    print(index, x, y)
+                    #print(index, x, y)
 
     #calculting fps and printing to window
     current_time = time.time()

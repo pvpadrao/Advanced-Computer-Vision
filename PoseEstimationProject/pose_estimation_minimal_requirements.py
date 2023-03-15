@@ -9,7 +9,8 @@ pose = mpPose.Pose()
 mpDraw = mp.solutions.drawing_utils
 
 # reading videos
-cap = cv2.VideoCapture("PoseEstimationProject/videos/defante.mp4")
+#cap = cv2.VideoCapture("PoseEstimationProject/videos/defante.mp4")
+cap = cv2.VideoCapture(0)
 
 while True:
     sucess, img = cap.read()
@@ -25,7 +26,7 @@ while True:
             cv2.circle(img, (center_x, center_y), 8, (255, 0, 255), cv2.FILLED)
         mpDraw.draw_landmarks(img, results.pose_landmarks, mpPose.POSE_CONNECTIONS)
     
-    img = cv2.resize(img, (300, 620)) 
+    #img = cv2.resize(img, (300, 620)) 
     cv2.imshow("Image", img)
     cv2.waitKey(1)
 
