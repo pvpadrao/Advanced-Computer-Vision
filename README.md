@@ -7,7 +7,7 @@
 * ``hand_landmarks.png``: mapping between hand and landmarks
 
 
-![demo_gif](https://user-images.githubusercontent.com/55985904/224433950-436aba5b-8570-4ef9-b424-4e2b75a37cc9.gif)
+![hand_tracking]()
 
 ### Project 2: Pose Detection & Tracking
 * ``pose_estimation_minimal_requirements.py``: minimal template to use ``mediapipe`` package for pose detection 
