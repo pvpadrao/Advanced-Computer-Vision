@@ -6,7 +6,7 @@ cap = cv2.VideoCapture(0)
 
 # creating a mediapipe object
 mpHands = mp.solutions.hands
-hands = mpHands.Hands()
+hands = mpHands.Hands(max_num_hands=10)
 
 # drawing hand landmarks
 mpDraw = mp.solutions.drawing_utils
